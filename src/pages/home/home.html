@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Background Photos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-card *ngFor="let card of cards">
+   <img src="assets/images/{{card.imgPath}}"/>
+
+   <ion-card-content>
+
+     <ion-card-title>
+       {{card.title}}
+     </ion-card-title>
+
+     <p>{{card.desc}}</p>
+
+     <ion-row>
+       <ion-col>
+         <button ion-button clear icon-start (click)="clickFav(card)">
+           <ion-icon [name]="(card.favorited) ? 'heart' : 'heart-outline'"></ion-icon>
+           Fav
+         </button>
+       </ion-col>
+
+       <ion-col>
+         <button ion-button clear icon-start>
+           <ion-icon name="share-alt"></ion-icon>
+           Share
+         </button>
+       </ion-col>
+
+       <ion-col>
+         <button ion-button clear icon-start>
+           <ion-icon name="thumbs-up"></ion-icon>
+           Like
+         </button>
+       </ion-col>
+
+     </ion-row>
+
+   </ion-card-content>
+ </ion-card>
+</ion-content>
